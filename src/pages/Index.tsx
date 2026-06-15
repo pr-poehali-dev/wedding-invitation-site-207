@@ -101,7 +101,7 @@ const Index = () => {
           </p>
           <h1 className="font-display font-light leading-[0.95]">
             <span className="block text-6xl md:text-8xl lg:text-9xl">{BRIDE}</span>
-            <span className="block text-3xl md:text-5xl text-accent my-3 md:my-5 italic font-light">&amp;</span>
+            <span className="block text-3xl md:text-5xl my-3 md:my-5 italic font-light text-[#827a73]">&amp;</span>
             <span className="block text-6xl md:text-8xl lg:text-9xl">{GROOM}</span>
           </h1>
           <div className="mt-10 flex items-center justify-center gap-4 text-muted-foreground">
