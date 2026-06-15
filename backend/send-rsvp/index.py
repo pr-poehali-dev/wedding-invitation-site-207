@@ -36,8 +36,8 @@ def handler(event: dict, context) -> dict:
         }
 
     smtp_password = os.environ['SMTP_PASSWORD']
-    from_email = 'yulia.visnay@mail.ru'
-    to_email = 'yulia.visnay@mail.ru'
+    from_email = 'sanuakv@gmail.com'
+    to_email = 'sanuakv@gmail.com'
 
     attending_text = 'Буду' if attending == 'yes' else 'Не смогу'
 
@@ -60,7 +60,7 @@ def handler(event: dict, context) -> dict:
     msg['To'] = to_email
     msg.attach(MIMEText(html, 'html', 'utf-8'))
 
-    with smtplib.SMTP('smtp.mail.ru', 587) as server:
+    with smtplib.SMTP('smtp.gmail.com', 587) as server:
         server.ehlo()
         server.starttls()
         server.login(from_email, smtp_password)
