@@ -4,8 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 
-const BRIDE = 'Анна';
-const GROOM = 'Михаил';
+const BRIDE = 'Юлия';
+const GROOM = 'Александр';
 const DATE = '12 сентября 2026';
 
 const Reveal = ({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) => {
