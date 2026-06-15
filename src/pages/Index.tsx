@@ -296,7 +296,22 @@ const Index = () => {
                   Не смогу
                 </button>
               </div>
-              <Textarea placeholder="Пожелания (например, что предпочитаете из напитков)" className="bg-secondary/40 border-border rounded-none min-h-28" />
+              <div>
+                <p className="text-xs uppercase tracking-[0.15em] text-muted-foreground mb-3">Выбор основного блюда</p>
+                <div className="space-y-2">
+                  {[
+                    'Филе судака с жасминовым рисом',
+                    'Куриное филе гриль с картофелем шато',
+                    'Телятина с овощами и паназиатским соусом',
+                    'Буженина в горчичном соусе с картофелем по-деревенски',
+                  ].map((dish) => (
+                    <label key={dish} className="flex items-center gap-3 p-3 border border-border bg-secondary/40 cursor-pointer hover:border-accent transition-colors group">
+                      <input type="radio" name="dish" value={dish} className="accent-current" />
+                      <span className="text-sm group-hover:text-accent transition-colors">{dish}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
               <Button className="w-full h-12 rounded-none text-sm uppercase tracking-[0.2em] bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-colors">
                 Отправить ответ
               </Button>
