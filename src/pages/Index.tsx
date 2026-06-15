@@ -238,7 +238,7 @@ const Index = () => {
               <div className="border border-border p-8">
                 <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">Лучше избежать</p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
-                  <li>Белый и молочно-белый</li>
+                  <li>Рисунков с цветами</li>
                   <li>Яркие неоновые цвета</li>
                   <li>Камуфляж и принты</li>
                 </ul>
