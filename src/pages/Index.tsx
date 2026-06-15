@@ -129,7 +129,7 @@ const Index = () => {
             {[
               { icon: 'Calendar', label: 'Дата', value: DATE },
               { icon: 'Clock', label: 'Время', value: 'Сбор в 13:00' },
-              { icon: 'MapPin', label: 'Место', value: 'Усадьба «Тихий сад»' },
+              { icon: 'MapPin', label: 'Место', value: 'Ресторан «Парус»' },
             ].map((item, i) => (
               <Reveal key={item.label} delay={i * 0.12}>
                 <div className="bg-background py-12 px-6 h-full flex flex-col items-center">
