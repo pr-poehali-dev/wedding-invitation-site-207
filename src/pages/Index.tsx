@@ -204,7 +204,6 @@ const Index = () => {
             <h2 className="font-display text-4xl md:text-6xl font-light mb-6">Цветовая гамма</h2>
             <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed text-lg">
               Мы будем рады, если ваши наряды впишутся в общую палитру торжества.
-              Пожалуйста, избегайте белого цвета.
             </p>
           </Reveal>
           <Reveal delay={0.1}>
