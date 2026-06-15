@@ -1,15 +1,278 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useEffect, useRef, useState } from 'react';
+import Icon from '@/components/ui/icon';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+
+const BRIDE = 'Анна';
+const GROOM = 'Михаил';
+const DATE = '12 сентября 2026';
+
+const Reveal = ({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [show, setShow] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => e.isIntersecting && setShow(true),
+      { threshold: 0.15 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return (
+    <div
+      ref={ref}
+      className={`${className} transition-none`}
+      style={{
+        opacity: show ? 1 : 0,
+        transform: show ? 'translateY(0)' : 'translateY(30px)',
+        transition: `opacity 0.9s cubic-bezier(0.16,1,0.3,1) ${delay}s, transform 0.9s cubic-bezier(0.16,1,0.3,1) ${delay}s`,
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
+const schedule = [
+  { time: '15:00', title: 'Сбор гостей', desc: 'Welcome-зона, лёгкие закуски и игристое', icon: 'Wine' },
+  { time: '16:00', title: 'Церемония', desc: 'Самый волнительный момент нашего дня', icon: 'Heart' },
+  { time: '17:00', title: 'Фуршет', desc: 'Поздравления, фотографии и общение', icon: 'Camera' },
+  { time: '18:30', title: 'Банкет', desc: 'Ужин, тосты и первый танец', icon: 'Utensils' },
+  { time: '22:00', title: 'Вечеринка', desc: 'Музыка, танцы до утра', icon: 'Music' },
+];
+
+const gifts = [
+  { title: 'Путешествие мечты', desc: 'Поможем осуществить наш свадебный вояж', icon: 'Plane' },
+  { title: 'Уют в доме', desc: 'Вещи для нашего общего гнёздышка', icon: 'Home' },
+  { title: 'Любимые книги', desc: 'Истории, которые мы прочитаем вместе', icon: 'BookOpen' },
+];
+
+const gallery = [
+  'https://cdn.poehali.dev/projects/f41c6218-6862-440d-a193-7f604335314e/files/1a6a6933-b0bd-4b8d-b5ce-d056923e20dc.jpg',
+  'https://cdn.poehali.dev/projects/f41c6218-6862-440d-a193-7f604335314e/files/21dcb505-f0b3-455b-a6c6-4d8e1e6c9a7a.jpg',
+  'https://cdn.poehali.dev/projects/f41c6218-6862-440d-a193-7f604335314e/files/6d69b4c6-3a63-4348-bc89-97bbb8931f47.jpg',
+];
+
+const nav = [
+  { id: 'event', label: 'Событие' },
+  { id: 'schedule', label: 'Программа' },
+  { id: 'gallery', label: 'Галерея' },
+  { id: 'gifts', label: 'Подарки' },
+  { id: 'rsvp', label: 'Анкета' },
+];
 
 const Index = () => {
+  const scrollTo = (id: string) =>
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
-      </div>
-      <span className="absolute bottom-8 left-1/2 -translate-x-1/2 inline-block bg-[#FF6637] text-white text-sm px-4 py-2 rounded-full whitespace-nowrap">
-        Подождите 5 минут, Юра создает первую версию проекта с нуля
-      </span>
+    <div className="min-h-screen bg-background text-foreground antialiased overflow-x-hidden">
+      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-sm bg-background/70 border-b border-border/60">
+        <nav className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+          <button onClick={() => scrollTo('hero')} className="font-display text-xl tracking-widest-xl">
+            А <span className="text-accent">&amp;</span> М
+          </button>
+          <ul className="hidden md:flex items-center gap-8 text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            {nav.map((n) => (
+              <li key={n.id}>
+                <button onClick={() => scrollTo(n.id)} className="hover:text-foreground transition-colors">
+                  {n.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      </header>
+
+      {/* HERO */}
+      <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-6 text-center">
+        <div className="animate-fade-in">
+          <p className="text-xs md:text-sm uppercase tracking-widest-xl text-muted-foreground mb-8">
+            Мы женимся
+          </p>
+          <h1 className="font-display font-light leading-[0.95]">
+            <span className="block text-6xl md:text-8xl lg:text-9xl">{BRIDE}</span>
+            <span className="block text-3xl md:text-5xl text-accent my-3 md:my-5 italic font-light">&amp;</span>
+            <span className="block text-6xl md:text-8xl lg:text-9xl">{GROOM}</span>
+          </h1>
+          <div className="mt-10 flex items-center justify-center gap-4 text-muted-foreground">
+            <span className="h-px w-12 bg-border" />
+            <span className="text-sm md:text-base uppercase tracking-[0.25em]">{DATE}</span>
+            <span className="h-px w-12 bg-border" />
+          </div>
+        </div>
+        <button
+          onClick={() => scrollTo('event')}
+          className="absolute bottom-10 text-muted-foreground hover:text-foreground transition-colors"
+          aria-label="Вниз"
+        >
+          <Icon name="ChevronDown" size={28} className="animate-bounce" />
+        </button>
+      </section>
+
+      {/* EVENT */}
+      <section id="event" className="py-28 md:py-40 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <Reveal>
+            <p className="text-xs uppercase tracking-widest-xl text-accent mb-5">О событии</p>
+            <h2 className="font-display text-4xl md:text-6xl font-light mb-6">
+              Дорогие гости
+            </h2>
+            <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed text-lg">
+              С большой радостью приглашаем вас разделить с нами день, когда мы станем
+              одной семьёй. Будем счастливы видеть вас рядом.
+            </p>
+          </Reveal>
+
+          <div className="grid sm:grid-cols-3 gap-px bg-border mt-16 border border-border">
+            {[
+              { icon: 'Calendar', label: 'Дата', value: DATE },
+              { icon: 'Clock', label: 'Время', value: 'Сбор в 15:00' },
+              { icon: 'MapPin', label: 'Место', value: 'Усадьба «Тихий сад»' },
+            ].map((item, i) => (
+              <Reveal key={item.label} delay={i * 0.12}>
+                <div className="bg-background py-12 px-6 h-full flex flex-col items-center">
+                  <Icon name={item.icon} size={28} className="text-accent mb-5" strokeWidth={1.2} />
+                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-2">{item.label}</p>
+                  <p className="font-display text-2xl">{item.value}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal delay={0.2}>
+            <p className="text-sm text-muted-foreground mt-8">
+              г. Москва, Рублёво-Успенское шоссе, 24
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* SCHEDULE */}
+      <section id="schedule" className="py-28 md:py-40 px-6 bg-secondary/40">
+        <div className="max-w-3xl mx-auto">
+          <Reveal className="text-center mb-20">
+            <p className="text-xs uppercase tracking-widest-xl text-accent mb-5">Программа дня</p>
+            <h2 className="font-display text-4xl md:text-6xl font-light">Как пройдёт день</h2>
+          </Reveal>
+
+          <div className="relative">
+            <div className="absolute left-[27px] md:left-1/2 top-2 bottom-2 w-px bg-border md:-translate-x-1/2" />
+            <div className="space-y-12">
+              {schedule.map((s, i) => (
+                <Reveal key={s.time} delay={i * 0.08}>
+                  <div className={`relative flex items-start gap-6 md:gap-0 ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                    <div className="md:w-1/2 md:px-10 flex-shrink-0">
+                      <div className={`flex items-center gap-4 ${i % 2 === 0 ? 'md:justify-end md:text-right' : 'md:justify-start'}`}>
+                        <div className="relative z-10 w-14 h-14 rounded-full bg-background border border-border flex items-center justify-center md:hidden">
+                          <Icon name={s.icon} size={20} className="text-accent" strokeWidth={1.3} />
+                        </div>
+                        <div>
+                          <p className="font-display text-3xl text-accent">{s.time}</p>
+                          <h3 className="font-display text-2xl mt-1">{s.title}</h3>
+                          <p className="text-muted-foreground text-sm mt-1">{s.desc}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 z-10 w-14 h-14 rounded-full bg-background border border-border items-center justify-center">
+                      <Icon name={s.icon} size={20} className="text-accent" strokeWidth={1.3} />
+                    </div>
+                    <div className="md:w-1/2" />
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* GALLERY */}
+      <section id="gallery" className="py-28 md:py-40 px-6">
+        <div className="max-w-6xl mx-auto">
+          <Reveal className="text-center mb-16">
+            <p className="text-xs uppercase tracking-widest-xl text-accent mb-5">Наши моменты</p>
+            <h2 className="font-display text-4xl md:text-6xl font-light">Галерея</h2>
+          </Reveal>
+          <div className="grid md:grid-cols-3 gap-4 md:gap-6">
+            {gallery.map((src, i) => (
+              <Reveal key={src} delay={i * 0.12} className={i === 1 ? 'md:mt-12' : ''}>
+                <div className="overflow-hidden group">
+                  <img
+                    src={src}
+                    alt="Анна и Михаил"
+                    className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[15%] group-hover:grayscale-0"
+                  />
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* GIFTS */}
+      <section id="gifts" className="py-28 md:py-40 px-6 bg-secondary/40">
+        <div className="max-w-4xl mx-auto text-center">
+          <Reveal className="mb-16">
+            <p className="text-xs uppercase tracking-widest-xl text-accent mb-5">Реестр подарков</p>
+            <h2 className="font-display text-4xl md:text-6xl font-light mb-6">Идеи для подарков</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed text-lg">
+              Ваше присутствие — лучший подарок. Но если хочется порадовать нас,
+              вот несколько идей.
+            </p>
+          </Reveal>
+          <div className="grid sm:grid-cols-3 gap-6">
+            {gifts.map((g, i) => (
+              <Reveal key={g.title} delay={i * 0.12}>
+                <div className="bg-background border border-border p-10 h-full flex flex-col items-center hover:border-accent transition-colors duration-300">
+                  <Icon name={g.icon} size={30} className="text-accent mb-5" strokeWidth={1.2} />
+                  <h3 className="font-display text-2xl mb-2">{g.title}</h3>
+                  <p className="text-muted-foreground text-sm">{g.desc}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* RSVP */}
+      <section id="rsvp" className="py-28 md:py-40 px-6">
+        <div className="max-w-xl mx-auto">
+          <Reveal className="text-center mb-12">
+            <p className="text-xs uppercase tracking-widest-xl text-accent mb-5">Подтверждение</p>
+            <h2 className="font-display text-4xl md:text-6xl font-light mb-6">Будете ли вы с нами?</h2>
+            <p className="text-muted-foreground leading-relaxed">
+              Пожалуйста, подтвердите присутствие до 1 августа 2026
+            </p>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+              <Input placeholder="Ваше имя и фамилия" className="h-12 bg-secondary/40 border-border rounded-none" />
+              <Input type="tel" placeholder="Телефон для связи" className="h-12 bg-secondary/40 border-border rounded-none" />
+              <div className="grid grid-cols-2 gap-4">
+                <button type="button" className="h-12 border border-border bg-secondary/40 text-sm uppercase tracking-[0.15em] hover:border-accent hover:text-accent transition-colors">
+                  Буду
+                </button>
+                <button type="button" className="h-12 border border-border bg-secondary/40 text-sm uppercase tracking-[0.15em] hover:border-accent hover:text-accent transition-colors">
+                  Не смогу
+                </button>
+              </div>
+              <Textarea placeholder="Пожелания (например, что предпочитаете из напитков)" className="bg-secondary/40 border-border rounded-none min-h-28" />
+              <Button className="w-full h-12 rounded-none text-sm uppercase tracking-[0.2em] bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-colors">
+                Отправить ответ
+              </Button>
+            </form>
+          </Reveal>
+        </div>
+      </section>
+
+      <footer className="py-16 px-6 border-t border-border text-center">
+        <p className="font-display text-3xl tracking-widest-xl mb-3">
+          А <span className="text-accent">&amp;</span> М
+        </p>
+        <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{DATE} · С любовью</p>
+      </footer>
     </div>
   );
 };
