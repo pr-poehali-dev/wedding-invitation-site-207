@@ -37,7 +37,7 @@ const Reveal = ({ children, delay = 0, className = '' }: { children: React.React
 };
 
 const schedule = [
-  { time: '13:00', title: 'Сбор гостей', desc: 'Welcome-зона, лёгкие закуски и игристое', icon: 'Wine' },
+  { time: '13:00', title: 'Сбор гостей', desc: '', icon: 'Wine' },
   { time: '14:00', title: 'Церемония', desc: 'Самый волнительный момент нашего дня', icon: 'Heart' },
   { time: '15:00', title: 'Фотосессия', desc: 'Незабываемые кадры этого особенного дня', icon: 'Camera' },
   { time: '16:30', title: 'Банкет', desc: 'Ужин, тосты и первый танец', icon: 'Utensils', place: 'Ресторан «Парус»', placeUrl: 'https://yandex.ru/maps/org/parus/1592493403/?ll=43.477512%2C56.225959&z=15.74' },
