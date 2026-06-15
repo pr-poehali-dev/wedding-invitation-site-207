@@ -128,7 +128,7 @@ const Index = () => {
           <div className="grid sm:grid-cols-3 gap-px bg-border mt-16 border border-border">
             {[
               { icon: 'Calendar', label: 'Дата', value: DATE },
-              { icon: 'Clock', label: 'Время', value: 'Сбор в 15:00' },
+              { icon: 'Clock', label: 'Время', value: 'Сбор в 13:00' },
               { icon: 'MapPin', label: 'Место', value: 'Усадьба «Тихий сад»' },
             ].map((item, i) => (
               <Reveal key={item.label} delay={i * 0.12}>
