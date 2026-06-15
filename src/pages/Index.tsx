@@ -87,44 +87,19 @@ const Index = () => {
 
       {/* HERO */}
       <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-6 text-center">
-        <div className="animate-fade-in w-full max-w-5xl mx-auto">
+        <div className="animate-fade-in">
           <p className="text-xs md:text-sm uppercase tracking-widest-xl text-muted-foreground mb-8">
             Мы женимся
           </p>
-          <div className="flex items-center justify-center gap-6 md:gap-12">
-            <div className="hidden md:block w-48 lg:w-64 flex-shrink-0">
-              <img
-                src="https://cdn.poehali.dev/projects/f41c6218-6862-440d-a193-7f604335314e/bucket/1fe41e2f-aa19-4765-accc-424a00c6c8d1.jpeg"
-                alt={BRIDE}
-                className="w-full aspect-[3/4] object-cover object-top grayscale-[20%]"
-              />
-            </div>
-            <div className="flex-1">
-              <h1 className="font-display font-light leading-[0.95]">
-                <span className="block text-5xl md:text-7xl lg:text-8xl">{BRIDE}</span>
-                <span className="block text-3xl md:text-5xl text-accent my-3 md:my-5 italic font-light">&amp;</span>
-                <span className="block text-5xl md:text-7xl lg:text-8xl">{GROOM}</span>
-              </h1>
-              <div className="mt-10 flex items-center justify-center gap-4 text-muted-foreground">
-                <span className="h-px w-12 bg-border" />
-                <span className="text-sm md:text-base uppercase tracking-[0.25em]">{DATE}</span>
-                <span className="h-px w-12 bg-border" />
-              </div>
-            </div>
-            <div className="hidden md:block w-48 lg:w-64 flex-shrink-0">
-              <img
-                src="https://cdn.poehali.dev/projects/f41c6218-6862-440d-a193-7f604335314e/bucket/1fe41e2f-aa19-4765-accc-424a00c6c8d1.jpeg"
-                alt={GROOM}
-                className="w-full aspect-[3/4] object-cover object-top grayscale-[20%] scale-x-[-1]"
-              />
-            </div>
-          </div>
-          <div className="md:hidden mt-8">
-            <img
-              src="https://cdn.poehali.dev/projects/f41c6218-6862-440d-a193-7f604335314e/bucket/1fe41e2f-aa19-4765-accc-424a00c6c8d1.jpeg"
-              alt="Александр и Юлия"
-              className="w-48 mx-auto aspect-[3/4] object-cover object-top grayscale-[20%]"
-            />
+          <h1 className="font-display font-light leading-[0.95]">
+            <span className="block text-6xl md:text-8xl lg:text-9xl">{BRIDE}</span>
+            <span className="block text-3xl md:text-5xl text-accent my-3 md:my-5 italic font-light">&amp;</span>
+            <span className="block text-6xl md:text-8xl lg:text-9xl">{GROOM}</span>
+          </h1>
+          <div className="mt-10 flex items-center justify-center gap-4 text-muted-foreground">
+            <span className="h-px w-12 bg-border" />
+            <span className="text-sm md:text-base uppercase tracking-[0.25em]">{DATE}</span>
+            <span className="h-px w-12 bg-border" />
           </div>
         </div>
         <button
