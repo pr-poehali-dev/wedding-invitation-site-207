@@ -47,7 +47,6 @@ const schedule = [
 const gifts = [
   { title: 'Путешествие мечты', desc: 'Поможем осуществить наш свадебный вояж', icon: 'Plane' },
   { title: 'Уют в доме', desc: 'Вещи для нашего общего гнёздышка', icon: 'Home' },
-  { title: 'Любимые книги', desc: 'Истории, которые мы прочитаем вместе', icon: 'BookOpen' },
 ];
 
 const gallery = [
