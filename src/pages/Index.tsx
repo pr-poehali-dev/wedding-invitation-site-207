@@ -257,7 +257,7 @@ const Index = () => {
               Самое ценное для нас — ваше присутствие на свадьбе. Если вы захотите сделать подарок, мы будем рады любому вкладу в наш семейный бюджет — эти средства помогут нам осуществить давнюю мечту.
             </p>
           </Reveal>
-          <div className="grid sm:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
             {gifts.map((g, i) => (
               <Reveal key={g.title} delay={i * 0.12}>
                 <div className="bg-background border border-border p-10 h-full flex flex-col items-center hover:border-accent transition-colors duration-300">
