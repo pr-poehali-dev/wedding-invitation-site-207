@@ -6,7 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 
 const BRIDE = 'Юлия';
 const GROOM = 'Александр';
-const DATE = '12 сентября 2026';
+const DATE = '10 октября 2026';
 
 const Reveal = ({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) => {
   const ref = useRef<HTMLDivElement>(null);
