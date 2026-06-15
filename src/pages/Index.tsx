@@ -91,7 +91,7 @@ const Index = () => {
           <img
             src="https://cdn.poehali.dev/projects/f41c6218-6862-440d-a193-7f604335314e/bucket/180d7504-70de-4546-b28a-55e8064e1b16.jpg"
             alt=""
-            className="w-full h-full object-cover opacity-25"
+            className="w-full h-full object-cover opacity-50"
           />
           <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse at center, transparent 20%, hsl(40,33%,98%) 75%)'}} />
         </div>
