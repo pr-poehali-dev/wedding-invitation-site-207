@@ -141,9 +141,7 @@ const Index = () => {
             ))}
           </div>
           <Reveal delay={0.2}>
-            <p className="text-sm text-muted-foreground mt-8">
-              г. Москва, Рублёво-Успенское шоссе, 24
-            </p>
+            <p className="text-sm text-muted-foreground mt-8">г. Дзержинск, Дворец Культуры Химиков</p>
           </Reveal>
         </div>
       </section>
