@@ -211,9 +211,6 @@ const Index = () => {
               {[
                 { color: '#C8B8A2', name: 'Пыльный беж' },
                 { color: '#A89880', name: 'Тёплый тауп' },
-                { color: '#D4C5B0', name: 'Молочный крем' },
-                { color: '#8C7B6B', name: 'Тёмный мокко' },
-                { color: '#E8DDD0', name: 'Айвори' },
               ].map((c) => (
                 <div key={c.color} className="flex flex-col items-center gap-3">
                   <div
