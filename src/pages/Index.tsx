@@ -41,7 +41,7 @@ const schedule = [
   { time: '14:00', title: 'Церемония', desc: 'Самый волнительный момент нашего дня', icon: 'Heart' },
   { time: '15:00', title: 'Фотосессия', desc: 'Незабываемые кадры этого особенного дня', icon: 'Camera' },
   { time: '16:30', title: 'Банкет', desc: 'Ужин, тосты и первый танец', icon: 'Utensils' },
-  { time: '22:00', title: 'Вечеринка', desc: 'Музыка, танцы до утра', icon: 'Music' },
+
 ];
 
 const gifts = [
