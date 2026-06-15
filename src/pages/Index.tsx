@@ -209,7 +209,7 @@ const Index = () => {
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="flex flex-wrap justify-center gap-6 mb-12">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-12 justify-items-center">
               {[
                 { color: '#F5E6C8', name: 'Шампань' },
                 { color: '#C8B8A2', name: 'Пыльный беж' },
