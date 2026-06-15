@@ -230,7 +230,7 @@ const Index = () => {
                 <p className="text-xs uppercase tracking-[0.2em] text-accent mb-3">Приветствуется</p>
                 <ul className="space-y-2 text-sm text-muted-foreground">
                   <li>Нюдовые и бежевые тона</li>
-                  <li> Оттенки коричневого</li>
+                  <li>Коричневые оттенки</li>
                   <li></li>
                   <li>Классический чёрный</li>
                 </ul>
