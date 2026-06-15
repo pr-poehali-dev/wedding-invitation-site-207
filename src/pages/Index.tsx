@@ -72,7 +72,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground antialiased overflow-x-hidden">
       <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-sm bg-background/70 border-b border-border/60">
         <nav className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-          <button onClick={() => scrollTo('hero')} className="font-display text-xl tracking-widest-xl">А & Ю</button>
+          <button className="font-display text-xl tracking-widest-xl text-[#c6b19f]" onClick={() => scrollTo('hero')} className="font-display text-xl tracking-widest-xl">А & Ю</button>
           <ul className="hidden md:flex items-center gap-8 text-xs uppercase tracking-[0.2em] text-muted-foreground">
             {nav.map((n) => (
               <li key={n.id}>
@@ -266,9 +266,8 @@ const Index = () => {
       </section>
 
       <footer className="py-16 px-6 border-t border-border text-center">
-        <p className="font-display text-3xl tracking-widest-xl mb-3">
-          А <span className="text-accent">&amp;</span> М
-        </p>
+        <p className="font-display text-3xl tracking-widest-xl mb-3">А & Ю
+</p>
         <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">{DATE} · С любовью</p>
       </footer>
     </div>
