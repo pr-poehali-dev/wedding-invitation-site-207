@@ -255,8 +255,7 @@ const Index = () => {
             <p className="text-xs uppercase tracking-widest-xl text-accent mb-5">Реестр подарков</p>
             <h2 className="font-display text-4xl md:text-6xl font-light mb-6">Идеи для подарков</h2>
             <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed text-lg">
-              Ваше присутствие — лучший подарок. Но если хочется порадовать нас,
-              вот несколько идей.
+              Самое ценное для нас — ваше присутствие на свадьбе. Если вы захотите сделать подарок, мы будем рады любому вкладу в наш семейный бюджет — эти средства помогут нам осуществить давнюю мечту.
             </p>
           </Reveal>
           <div className="grid sm:grid-cols-3 gap-6">
