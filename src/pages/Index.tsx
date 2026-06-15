@@ -281,11 +281,10 @@ const Index = () => {
           <Reveal className="text-center mb-12">
             <p className="text-xs uppercase tracking-widest-xl text-accent mb-5">Подтверждение</p>
             <h2 className="font-display text-4xl md:text-6xl font-light mb-6">Будете ли вы с нами?</h2>
-            <p className="text-muted-foreground leading-relaxed">Пожалуйста, подтвердите присутствие до 31 августа 2026
-
-Свяжитесь с нами удобным вам способом
-
-В ответ просим вас указать блюда выбранные для банкета</p>
+            <p className="text-muted-foreground leading-relaxed">
+              Пожалуйста, подтвердите присутствие до 31 августа 2026.<br />
+              Свяжитесь с нами удобным вам способом. В ответ просим вас указать блюда, выбранные для банкета.
+            </p>
           </Reveal>
           <RsvpForm />
         </div>
