@@ -3,6 +3,7 @@ import Icon from '@/components/ui/icon';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import RsvpForm from '@/components/RsvpForm';
 
 const BRIDE = 'Александр';
 const GROOM = 'Юлия';
@@ -284,55 +285,7 @@ const Index = () => {
               Пожалуйста, подтвердите присутствие до 31 августа 2026
             </p>
           </Reveal>
-          <Reveal delay={0.15}>
-            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-              <Input placeholder="Ваше имя и фамилия" className="h-12 bg-secondary/40 border-border rounded-none" />
-              <Input type="tel" placeholder="Телефон для связи" className="h-12 bg-secondary/40 border-border rounded-none" />
-              <div className="grid grid-cols-2 gap-4">
-                <button type="button" className="h-12 border border-border bg-secondary/40 text-sm uppercase tracking-[0.15em] hover:border-accent hover:text-accent transition-colors">
-                  Буду
-                </button>
-                <button type="button" className="h-12 border border-border bg-secondary/40 text-sm uppercase tracking-[0.15em] hover:border-accent hover:text-accent transition-colors">
-                  Не смогу
-                </button>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.15em] text-muted-foreground mb-3">Выбор салата</p>
-                <div className="space-y-2">
-                  {[
-                    'Тёплый салат с баклажанами',
-                    'Салат с морепродуктами и сливочно-устричным соусом',
-                    'Цезарь с курицей',
-                    '«Почти оливье» с копчёным цыплёнком',
-                  ].map((dish) => (
-                    <label key={dish} className="flex items-center gap-3 p-3 border border-border bg-secondary/40 cursor-pointer hover:border-accent transition-colors group">
-                      <input type="radio" name="salad" value={dish} className="accent-current" />
-                      <span className="text-sm group-hover:text-accent transition-colors">{dish}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-              <div>
-                <p className="text-xs uppercase tracking-[0.15em] text-muted-foreground mb-3">Выбор основного блюда</p>
-                <div className="space-y-2">
-                  {[
-                    'Филе судака с жасминовым рисом',
-                    'Куриное филе гриль с картофелем шато',
-                    'Телятина с овощами и паназиатским соусом',
-                    'Буженина в горчичном соусе с картофелем по-деревенски',
-                  ].map((dish) => (
-                    <label key={dish} className="flex items-center gap-3 p-3 border border-border bg-secondary/40 cursor-pointer hover:border-accent transition-colors group">
-                      <input type="radio" name="dish" value={dish} className="accent-current" />
-                      <span className="text-sm group-hover:text-accent transition-colors">{dish}</span>
-                    </label>
-                  ))}
-                </div>
-              </div>
-              <Button className="w-full h-12 rounded-none text-sm uppercase tracking-[0.2em] bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground transition-colors">
-                Отправить ответ
-              </Button>
-            </form>
-          </Reveal>
+          <RsvpForm />
         </div>
       </section>
 
