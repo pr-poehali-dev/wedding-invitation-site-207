@@ -59,7 +59,7 @@ const gallery = [
 const nav = [
   { id: 'event', label: 'Событие' },
   { id: 'schedule', label: 'Программа' },
-  { id: 'gallery', label: 'Галерея' },
+  { id: 'dresscode', label: 'Дресс-код' },
   { id: 'gifts', label: 'Подарки' },
   { id: 'rsvp', label: 'Анкета' },
 ];
@@ -196,26 +196,57 @@ const Index = () => {
         </div>
       </section>
 
-      {/* GALLERY */}
-      <section id="gallery" className="py-28 md:py-40 px-6">
-        <div className="max-w-6xl mx-auto">
-          <Reveal className="text-center mb-16">
-            <p className="text-xs uppercase tracking-widest-xl text-accent mb-5">Наши моменты</p>
-            <h2 className="font-display text-4xl md:text-6xl font-light">Галерея</h2>
+      {/* DRESSCODE */}
+      <section id="dresscode" className="py-28 md:py-40 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <Reveal className="mb-16">
+            <p className="text-xs uppercase tracking-widest-xl text-accent mb-5">Дресс-код</p>
+            <h2 className="font-display text-4xl md:text-6xl font-light mb-6">Цветовая гамма</h2>
+            <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed text-lg">
+              Мы будем рады, если ваши наряды впишутся в общую палитру торжества.
+              Пожалуйста, избегайте белого цвета.
+            </p>
           </Reveal>
-          <div className="grid md:grid-cols-3 gap-4 md:gap-6">
-            {gallery.map((src, i) => (
-              <Reveal key={src} delay={i * 0.12} className={i === 1 ? 'md:mt-12' : ''}>
-                <div className="overflow-hidden group">
-                  <img
-                    src={src}
-                    alt="Анна и Михаил"
-                    className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105 grayscale-[15%] group-hover:grayscale-0"
+          <Reveal delay={0.1}>
+            <div className="flex flex-wrap justify-center gap-6 mb-12">
+              {[
+                { color: '#C8B8A2', name: 'Пыльный беж' },
+                { color: '#A89880', name: 'Тёплый тауп' },
+                { color: '#D4C5B0', name: 'Молочный крем' },
+                { color: '#8C7B6B', name: 'Тёмный мокко' },
+                { color: '#E8DDD0', name: 'Айвори' },
+              ].map((c) => (
+                <div key={c.color} className="flex flex-col items-center gap-3">
+                  <div
+                    className="w-20 h-20 md:w-24 md:h-24 border border-border/50"
+                    style={{ backgroundColor: c.color }}
                   />
+                  <span className="text-xs text-muted-foreground uppercase tracking-[0.15em]">{c.name}</span>
                 </div>
-              </Reveal>
-            ))}
-          </div>
+              ))}
+            </div>
+          </Reveal>
+          <Reveal delay={0.2}>
+            <div className="grid sm:grid-cols-2 gap-6 text-left max-w-xl mx-auto">
+              <div className="border border-border p-8">
+                <p className="text-xs uppercase tracking-[0.2em] text-accent mb-3">Приветствуется</p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>Нюдовые и бежевые тона</li>
+                  <li>Пастельные оттенки</li>
+                  <li>Светло-серый, лавандовый</li>
+                  <li>Классический чёрный</li>
+                </ul>
+              </div>
+              <div className="border border-border p-8">
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-3">Лучше избежать</p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>Белый и молочно-белый</li>
+                  <li>Яркие неоновые цвета</li>
+                  <li>Камуфляж и принты</li>
+                </ul>
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
