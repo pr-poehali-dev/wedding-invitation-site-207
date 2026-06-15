@@ -37,10 +37,10 @@ const Reveal = ({ children, delay = 0, className = '' }: { children: React.React
 };
 
 const schedule = [
-  { time: '15:00', title: 'Сбор гостей', desc: 'Welcome-зона, лёгкие закуски и игристое', icon: 'Wine' },
-  { time: '16:00', title: 'Церемония', desc: 'Самый волнительный момент нашего дня', icon: 'Heart' },
-  { time: '17:00', title: 'Фуршет', desc: 'Поздравления, фотографии и общение', icon: 'Camera' },
-  { time: '18:30', title: 'Банкет', desc: 'Ужин, тосты и первый танец', icon: 'Utensils' },
+  { time: '13:00', title: 'Сбор гостей', desc: 'Welcome-зона, лёгкие закуски и игристое', icon: 'Wine' },
+  { time: '14:00', title: 'Церемония', desc: 'Самый волнительный момент нашего дня', icon: 'Heart' },
+  { time: '15:00', title: 'Фуршет', desc: 'Поздравления, фотографии и общение', icon: 'Camera' },
+  { time: '16:30', title: 'Банкет', desc: 'Ужин, тосты и первый танец', icon: 'Utensils' },
   { time: '22:00', title: 'Вечеринка', desc: 'Музыка, танцы до утра', icon: 'Music' },
 ];
 
