@@ -40,7 +40,7 @@ const schedule = [
   { time: '13:00', title: 'Сбор гостей', desc: 'Welcome-зона, лёгкие закуски и игристое', icon: 'Wine' },
   { time: '14:00', title: 'Церемония', desc: 'Самый волнительный момент нашего дня', icon: 'Heart' },
   { time: '15:00', title: 'Фотосессия', desc: 'Незабываемые кадры этого особенного дня', icon: 'Camera' },
-  { time: '16:30', title: 'Банкет', desc: 'Ужин, тосты и первый танец · Ресторан «Парус»', icon: 'Utensils' },
+  { time: '16:30', title: 'Банкет', desc: 'Ужин, тосты и первый танец', icon: 'Utensils', place: 'Ресторан «Парус»', placeUrl: 'https://yandex.ru/maps/org/parus/1592493403/?ll=43.477512%2C56.225959&z=15.74' },
 
 ];
 
@@ -167,6 +167,12 @@ const Index = () => {
                           <p className="font-display text-3xl text-accent">{s.time}</p>
                           <h3 className="font-display text-2xl mt-1">{s.title}</h3>
                           <p className="text-muted-foreground text-sm mt-1">{s.desc}</p>
+                          {s.place && s.placeUrl && (
+                            <a href={s.placeUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-accent hover:underline mt-1">
+                              <Icon name="MapPin" size={13} strokeWidth={1.5} />
+                              {s.place}
+                            </a>
+                          )}
                         </div>
                       </div>
                     </div>
