@@ -297,6 +297,22 @@ const Index = () => {
                 </button>
               </div>
               <div>
+                <p className="text-xs uppercase tracking-[0.15em] text-muted-foreground mb-3">Выбор салата</p>
+                <div className="space-y-2">
+                  {[
+                    'Тёплый салат с баклажанами',
+                    'Салат с морепродуктами и сливочно-устричным соусом',
+                    'Цезарь с курицей',
+                    '«Почти оливье» с копчёным цыплёнком',
+                  ].map((dish) => (
+                    <label key={dish} className="flex items-center gap-3 p-3 border border-border bg-secondary/40 cursor-pointer hover:border-accent transition-colors group">
+                      <input type="radio" name="salad" value={dish} className="accent-current" />
+                      <span className="text-sm group-hover:text-accent transition-colors">{dish}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+              <div>
                 <p className="text-xs uppercase tracking-[0.15em] text-muted-foreground mb-3">Выбор основного блюда</p>
                 <div className="space-y-2">
                   {[
