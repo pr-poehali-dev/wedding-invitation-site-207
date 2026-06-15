@@ -86,8 +86,16 @@ const Index = () => {
       </header>
 
       {/* HERO */}
-      <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-6 text-center">
-        <div className="animate-fade-in">
+      <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center px-6 text-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img
+            src="https://cdn.poehali.dev/projects/f41c6218-6862-440d-a193-7f604335314e/bucket/180d7504-70de-4546-b28a-55e8064e1b16.jpg"
+            alt=""
+            className="w-full h-full object-cover opacity-25"
+          />
+          <div className="absolute inset-0" style={{background: 'radial-gradient(ellipse at center, transparent 20%, hsl(40,33%,98%) 75%)'}} />
+        </div>
+        <div className="relative z-10 animate-fade-in">
           <p className="text-xs md:text-sm uppercase tracking-widest-xl text-muted-foreground mb-8">
             Мы женимся
           </p>
@@ -104,7 +112,7 @@ const Index = () => {
         </div>
         <button
           onClick={() => scrollTo('event')}
-          className="absolute bottom-10 text-muted-foreground hover:text-foreground transition-colors"
+          className="absolute bottom-10 z-10 text-muted-foreground hover:text-foreground transition-colors"
           aria-label="Вниз"
         >
           <Icon name="ChevronDown" size={28} className="animate-bounce" />
